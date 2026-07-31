@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XMY Jadval</title>
+<link rel="icon" type="image/png" href="../assets/Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="sheets.css">
+</head>
+<body>
+
+<div class="appbar">
+  <a class="appbar-brand" href="../index.html" title="XMY Ofisga qaytish">
+    <img src="../assets/Logo.png" alt="XMY">
+  </a>
+  <input class="appbar-title" id="docTitle" value="Nomsiz jadval" spellcheck="false">
+  <div class="appbar-menu">
+    <button id="menuFile">Fayl</button>
+    <button id="btnAddRow">+ Qator</button>
+    <button id="btnAddCol">+ Ustun</button>
+    <button id="btnDelRow">&minus; Qator</button>
+    <button id="btnDelCol">&minus; Ustun</button>
+  </div>
+  <div class="appbar-spacer"></div>
+  <span class="appbar-status" id="saveStatus">Saqlandi</span>
+  <div class="appbar-actions">
+    <button class="btn btn-solid" id="btnExport">Yuklab olish (.csv)</button>
+  </div>
+</div>
+
+<div class="toolbar">
+  <button class="icon-btn" data-style="bold" title="Qalin"><svg viewBox="0 0 24 24"><path d="M6 4h7a4 4 0 010 8H6zM6 12h8a4 4 0 010 8H6z"/></svg></button>
+  <button class="icon-btn" data-style="italic" title="Qiya"><svg viewBox="0 0 24 24"><path d="M10 4h8M6 20h8M13 4L11 20"/></svg></button>
+  <button class="icon-btn" data-style="underline" title="Tagiga chizish"><svg viewBox="0 0 24 24"><path d="M6 4v7a6 6 0 0012 0V4M4 20h16"/></svg></button>
+  <div class="divider-v"></div>
+  <label class="icon-btn" title="Fon rangi" style="position:relative">
+    <svg viewBox="0 0 24 24"><path d="M4 20h16M6 14l6-8 6 8-6 4z"/></svg>
+    <input type="color" id="cellBg" value="#1c1c1c" style="position:absolute;inset:0;opacity:0;cursor:pointer">
+  </label>
+  <label class="icon-btn" title="Matn rangi" style="position:relative">
+    <svg viewBox="0 0 24 24"><path d="M4 20h16M8 16l4-12 4 12M6.5 12h7"/></svg>
+    <input type="color" id="cellColor" value="#f2f4f2" style="position:absolute;inset:0;opacity:0;cursor:pointer">
+  </label>
+  <div class="divider-v"></div>
+  <button class="icon-btn" data-align="left" title="Chapga"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h12M3 18h16"/></svg></button>
+  <button class="icon-btn" data-align="center" title="Markazga"><svg viewBox="0 0 24 24"><path d="M3 6h18M6 12h12M4 18h16"/></svg></button>
+  <button class="icon-btn" data-align="right" title="O'ngga"><svg viewBox="0 0 24 24"><path d="M3 6h18M9 12h12M5 18h16"/></svg></button>
+  <div class="divider-v"></div>
+  <select class="select-box" id="numFormat" title="Format">
+    <option value="plain">Oddiy son</option>
+    <option value="currency">Valyuta (so'm)</option>
+    <option value="percent">Foiz</option>
+  </select>
+  <div class="divider-v"></div>
+  <span class="fx-hint" title="Formula yozish uchun = bilan boshlang. Masalan: =SUM(A1:A5)">fx Formulalar: =SUM(), =AVERAGE(), =MIN(), =MAX(), =COUNT()</span>
+</div>
+
+<div class="formula-bar">
+  <span class="cell-ref" id="cellRef">A1</span>
+  <input class="formula-input" id="formulaInput" placeholder="Qiymat yoki formula (masalan: =SUM(A1:A5))" spellcheck="false">
+</div>
+
+<div class="grid-scroll" id="gridScroll"></div>
+
+<input type="file" id="fileInput" accept=".csv" hidden>
+<div class="toast" id="toast"><span class="dot"></span><span id="toastText"></span></div>
+
+<script src="sheets.js"></script>
+</body>
+</html>

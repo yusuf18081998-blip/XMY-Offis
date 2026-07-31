@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XMY Ofis — Bepul, hisobsiz ofis paketi</title>
+<meta name="description" content="XMY Ofis — Microsoft Office'ga mutlaqo bepul, hisobsiz muqobil. XMY Yozuv, XMY Jadval, XMY Taqdimot — barchasi brauzeringizda.">
+<link rel="icon" type="image/png" href="assets/Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<style>
+  body{overflow-y:auto;overflow-x:hidden}
+  .hub-header{
+    display:flex;align-items:center;gap:.7rem;padding:1.4rem 2rem;border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:rgba(5,5,5,.85);backdrop-filter:blur(14px);z-index:10;
+  }
+  .hub-header img{width:30px;height:30px;mix-blend-mode:screen}
+  .hub-header span{font-family:var(--font-display);font-weight:700;font-size:1.05rem}
+  .hub-header .tag{font-family:var(--font-mono);font-size:.7rem;color:var(--neon);letter-spacing:.08em;margin-left:.4rem;padding:.2rem .55rem;border:1px solid rgba(57,255,106,.35);border-radius:100px}
+
+  .hub-hero{padding:4rem 2rem 2rem;max-width:1100px;margin:0 auto;text-align:center}
+  .hub-hero h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;letter-spacing:-.02em}
+  .hub-hero h1 span{color:var(--neon)}
+  .hub-hero p{color:var(--text-dim);margin-top:1rem;font-size:1.05rem;max-width:60ch;margin-inline:auto}
+
+  .app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:1100px;margin:2.8rem auto;padding:0 2rem}
+  .app-card{
+    background:var(--glass);border:1px solid var(--line);border-radius:var(--radius-l);padding:1.8rem;
+    display:flex;flex-direction:column;gap:1rem;transition:border-color .3s,transform .3s;cursor:pointer;
+  }
+  .app-card:hover{border-color:rgba(57,255,106,.4);transform:translateY(-4px)}
+  .app-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+  .app-icon svg{width:26px;height:26px;stroke:#04140a;fill:none;stroke-width:1.8}
+  .app-card h3{font-family:var(--font-display);font-size:1.25rem;font-weight:600}
+  .app-card p{color:var(--text-dim);font-size:.9rem;line-height:1.5}
+  .app-card .go{margin-top:.4rem;color:var(--neon);font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:.4rem}
+  .app-card .go svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s}
+  .app-card:hover .go svg{transform:translateX(4px)}
+
+  .recent{max-width:1100px;margin:0 auto 4rem;padding:0 2rem}
+  .recent h2{font-family:var(--font-display);font-size:1.2rem;margin-bottom:1rem;color:var(--text-dim);font-weight:500}
+  .recent-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+  .recent-item{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-m);padding:1rem;
+    display:flex;flex-direction:column;gap:.5rem;transition:border-color .25s;
+  }
+  .recent-item:hover{border-color:var(--line-2)}
+  .recent-item .rtype{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.06em;text-transform:uppercase}
+  .recent-item .rname{font-size:.9rem;font-weight:500}
+  .recent-item .rmeta{font-size:.75rem;color:var(--text-faint)}
+  .empty-note{color:var(--text-faint);font-size:.88rem}
+
+  @media (max-width:820px){ .app-grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<header class="hub-header">
+  <img src="assets/Logo.png" alt="XMY">
+  <span>XMY Ofis</span>
+  <span class="tag">BEPUL &middot; HISOBSIZ</span>
+</header>
+
+<section class="hub-hero">
+  <h1>Ofis dasturlari.<br>Endi <span>hisobsiz va bepul</span>.</h1>
+  <p>XMY Ofis — hech qanday ro'yxatdan o'tishsiz, hech qanday to'lovsiz ishlaydigan to'liq ofis paketi. Hujjatlaringiz faqat sizning kompyuteringizda saqlanadi.</p>
+</section>
+
+<section class="app-grid">
+  <a class="app-card" href="docs/index.html">
+    <div class="app-icon" style="background:var(--neon)">
+      <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6M9 9h2"/></svg>
+    </div>
+    <h3>XMY Yozuv</h3>
+    <p>To'liq formatlash imkoniyatiga ega matn muharriri. Word'ga muqobil.</p>
+    <span class="go">Ochish <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <a class="app-card" href="sheets/index.html">
+    <div class="app-icon" style="background:var(--neon)">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+    </div>
+    <h3>XMY Jadval</h3>
+    <p>Formulalar, funksiyalar va hisob-kitob uchun elektron jadval. Excel'ga muqobil.</p>
+    <span class="go">Ochish <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <a class="app-card" href="slides/index.html">
+    <div class="app-icon" style="background:var(--neon)">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="1.5"/><path d="M8 21h8M12 18v3"/></svg>
+    </div>
+    <h3>XMY Taqdimot</h3>
+    <p>Slaydlar yarating, dizayn qiling va taqdimot rejimida namoyish eting. PowerPoint'ga muqobil.</p>
+    <span class="go">Ochish <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+</section>
+
+<section class="recent">
+  <h2>So'nggi hujjatlar</h2>
+  <div class="recent-list" id="recentList">
+    <p class="empty-note">Hozircha hujjatlar yo'q. Ilovalardan birini oching va ishni boshlang — u shu yerda ko'rinadi.</p>
+  </div>
+</section>
+
+<script>
+  // Har uch ilova ham localStorage'ga "xmy_recent" ro'yxatini yozadi.
+  (function(){
+    try{
+      const recent = JSON.parse(localStorage.getItem('xmy_recent') || '[]');
+      if(!recent.length) return;
+      const list = document.getElementById('recentList');
+      list.innerHTML = '';
+      recent.slice(0,8).forEach(r=>{
+        const a = document.createElement('a');
+        a.className='recent-item';
+        a.href = r.app + '/index.html?open=' + encodeURIComponent(r.id);
+        a.innerHTML = `<span class="rtype" style="color:var(--neon)">${r.type}</span><span class="rname">${r.name}</span><span class="rmeta">${new Date(r.updated).toLocaleString('uz-UZ')}</span>`;
+        list.appendChild(a);
+      });
+    }catch(e){}
+  })();
+</script>
+</body>
+</html>
