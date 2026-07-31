@@ -1,0 +1,45 @@
+body{display:flex;flex-direction:column;height:100vh;overflow:hidden}
+
+.toolbar{
+  display:flex;align-items:center;gap:.25rem;padding:.45rem .75rem;background:var(--surface);
+  border-bottom:1px solid var(--line);flex:0 0 auto;overflow-x:auto;
+}
+.fx-hint{font-size:.75rem;color:var(--text-faint);font-family:var(--font-mono);margin-left:.5rem;white-space:nowrap}
+
+.formula-bar{
+  display:flex;align-items:center;gap:.6rem;padding:.4rem .75rem;background:var(--deep);
+  border-bottom:1px solid var(--line);flex:0 0 auto;
+}
+.cell-ref{
+  font-family:var(--font-mono);font-size:.8rem;color:var(--neon);background:var(--surface);
+  border:1px solid var(--line);padding:.35rem .7rem;border-radius:6px;min-width:56px;text-align:center;
+}
+.formula-input{
+  flex:1;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.4rem .7rem;
+  font-family:var(--font-mono);font-size:.85rem;
+}
+.formula-input:focus{border-color:var(--neon)}
+
+.grid-scroll{flex:1;overflow:auto;background:var(--void)}
+table.sheet{border-collapse:separate;border-spacing:0}
+table.sheet th,table.sheet td{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+.col-header,.row-header{
+  position:sticky;background:var(--surface);color:var(--text-faint);font-family:var(--font-mono);
+  font-size:.72rem;font-weight:500;text-align:center;user-select:none;z-index:2;
+}
+.col-header{top:0;height:28px;width:100px;min-width:100px}
+.row-header{left:0;width:42px;min-width:42px}
+.corner{position:sticky;top:0;left:0;z-index:3;background:var(--surface)}
+
+td.cell{
+  width:100px;min-width:100px;height:26px;padding:0 6px;font-size:.85rem;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;outline:none;caret-color:var(--neon);cursor:cell;
+}
+td.cell:focus{box-shadow:inset 0 0 0 2px var(--neon);position:relative;z-index:1;white-space:normal;overflow:visible}
+td.cell.is-selected{box-shadow:inset 0 0 0 2px var(--neon)}
+td.cell.err{color:var(--danger)}
+
+@media (max-width:820px){
+  .fx-hint{display:none}
+}
